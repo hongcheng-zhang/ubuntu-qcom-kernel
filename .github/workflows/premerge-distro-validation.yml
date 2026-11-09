@@ -55,7 +55,7 @@ jobs:
         run: |
           set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends gh
+          sudo apt-get install -y -o DPkg::Lock::Timeout=300 --no-install-recommends gh
 
       - id: context
         name: Validate triggering workflow context
@@ -120,7 +120,7 @@ jobs:
         run: |
           set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends gh
+          sudo apt-get install -y -o DPkg::Lock::Timeout=300 --no-install-recommends gh
 
       - id: check
         name: Start distro validation Check Run
@@ -217,7 +217,7 @@ jobs:
         run: |
           set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends gh
+          sudo apt-get install -y -o DPkg::Lock::Timeout=300 --no-install-recommends gh
 
       - name: Publish failure status
         env:
@@ -257,7 +257,7 @@ jobs:
         run: |
           set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends gh
+          sudo apt-get install -y -o DPkg::Lock::Timeout=300 --no-install-recommends gh
 
       - id: callback
         name: Validate returned distro result
@@ -287,7 +287,7 @@ jobs:
         run: |
           set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends gh
+          sudo apt-get install -y -o DPkg::Lock::Timeout=300 --no-install-recommends gh
 
       - name: Publish final status and summary
         env:
